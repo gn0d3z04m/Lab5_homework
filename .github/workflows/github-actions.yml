@@ -19,10 +19,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y lcov
-
+      - name: CMake Action
+        uses: threeal/cmake-action@v2.1.0
       - name: Configure CMake
         run: |
-          cmake -H. -B_build -DBUILD_TESTS=ON
+          cmake -H. -Bbuild -DBUILD_TESTS=ON
 
       - name: Build project
         run: |
