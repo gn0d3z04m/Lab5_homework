@@ -12,6 +12,4 @@ add_subdirectory(third-party/gtest)
 
 if(BUILD_TESTS)
   enable_testing()
-  target_link_libraries(check_acc gtest gtest_main)
-  target_link_libraries(check_tr gtest gtest_main)
 endif()
