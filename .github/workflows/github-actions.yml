@@ -14,7 +14,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: ls
-        run: ls third-party/gtest/
+        working-directory: third-party
+        run: ls gtest
       - name: Configure CMake
         run: |
           cmake -H. -Bbuild -DBUILD_TESTS=ON
