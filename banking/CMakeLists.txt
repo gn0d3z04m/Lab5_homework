@@ -5,4 +5,5 @@ project(banking)
 
 add_library(account Account.h)
 add_library(transaction Transaction.h)
-
+link_libraries(account transation)
+link_libraries(transation account)
