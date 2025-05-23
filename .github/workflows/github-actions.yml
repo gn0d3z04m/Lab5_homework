@@ -22,22 +22,22 @@ jobs:
           sudo apt-get install -y lcov
 
       - name: Configure CMake
-        working-directory: ./banking
+        working-directory: banking
         run: |
           cmake -H. -B_build -DBUILD_TESTS=ON
 
       - name: Build project
-        working-directory: ./banking
+        working-directory: banking
         run: |
           cmake --build _build
 
       - name: Run tests
-        working-directory: ./banking
+        working-directory: banking
         run: |
           cd _build && ctest --output-on-failure
 
       - name: Generate coverage report
-        working-directory: ./banking
+        working-directory: banking
         run: |
         
           cd _build
