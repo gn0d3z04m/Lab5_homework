@@ -8,3 +8,8 @@ include_directories("banking/ tests/")
 
 add_subdirectory(banking)
 add_subdirectory(tests)
+
+if(BUILD_TESTS)
+  enable_testing()
+  add_subdirectory(third-party/gtest)
+endif()
