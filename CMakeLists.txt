@@ -4,10 +4,11 @@ cmake_minimum_required(VERSION 3.4)
 
 project(lab5)
 
-include_directories("banking/" "tests/")
+include_directories("banking/" "tests/" "third-party")
 
 add_subdirectory(banking)
 add_subdirectory(tests)
+add_subdirectory(third-party)
 
 if(BUILD_TESTS)
   enable_testing()
