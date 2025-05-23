@@ -1,22 +1,8 @@
-cmake_minimum_required(VERSION 3.10)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 project(banking)
 
-set(CMAKE_CXX_STANDARD 17)
+add_library(account account.h)
+add_library(transaction transaction.h)
 
-add_library(banking
-    Account.cpp
-    Transaction.cpp
-)
-
-target_include_directories(banking PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
-if(BUILD_TESTS)
-    enable_testing()
-    add_subdirectory(third-party/gtest)
-    
-    file(GLOB TEST_SOURCES tests/*.cpp)
-    add_executable(banking_tests ${TEST_SOURCES})
-    target_link_libraries(banking_tests banking gtest gtest_main)
-    
-    add_test(NAME banking_tests COMMAND banking_tests)
-endif()
