@@ -3,7 +3,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(tests)
 
-file(GLOB TEST_SOURCES *.cpp)
-add_executable(check \${TEST_SOURCES})
-target_link_libraries(check \${PROJECT_NAME} gtest_main)
-add_test(NAME check COMMAND check)
+add_executable(check_acc test_account.cpp)
+add_executable(check_tr test_transaction.cpp)
+target_link_libraries(check_acc \${PROJECT_NAME} gtest_main)
+target_link_libraries(check_tr \${PROJECT_NAME} gtest_main)
+add_test(NAME check_acc COMMAND check_acc)
+add_test(NAME check_tr COMMAND check_tr)
