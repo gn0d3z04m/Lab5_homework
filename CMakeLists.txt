@@ -8,10 +8,10 @@ include_directories("banking/" "tests/" "third-party/gtest" "third-party")
 
 add_subdirectory(banking)
 add_subdirectory(tests)
+add_subdirectory(third-party/gtest)
 
 if(BUILD_TESTS)
   enable_testing()
-  add_subdirectory(third-party/gtest)
   target_link_libraries(check_acc gtest gtest_main)
   target_link_libraries(check_tr gtest gtest_main)
 endif()
