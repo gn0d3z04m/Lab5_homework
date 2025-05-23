@@ -21,6 +21,8 @@ jobs:
       - name: Configure CMake
         run: |
           cmake -H. -Bbuild -DBUILD_TESTS=ON
+      - name: ls
+        run: ls
       - name: Build project
         run: |
           cmake --build _build
