@@ -3,6 +3,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(banking)
 
-add_library(account account.h)
-add_library(transaction transaction.h)
+add_library(account Account.h)
+add_library(transaction Transaction.h)
 
