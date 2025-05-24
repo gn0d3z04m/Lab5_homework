@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: gtest
+        run:  sudo apt-get install libgtest-dev
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
